@@ -3,13 +3,15 @@ import Card from 'react-bootstrap/Card'
 import { Form, Button } from "react-bootstrap"
 import React from "react";
 import isLogged from './isLogged';
+import { Redirect, Router, Route } from 'react-router';
+//import Dashboard from './Dashboard';
 
 function Validate(user, pass) {
   //console.log(user, pass);
   if ((user === 'shriphad') && pass === '!shri2424') {
     isLogged.setLogged();
-    //console.log(isLogged.getLogged());+
-
+    <Redirect to='/Dashboard' />
+    //console.log(isLogged.getLogged());
   }
 }
 

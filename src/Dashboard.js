@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function Dashboard() {
-    return (
-        <div>
-
-        </div>
-    )
+class DashBoard extends React.Component {
+    render() {
+        return (
+            <>
+                <p>Hello Shriphad</p>
+            </>,
+            document.getElementById('root')
+        )
+    }
 }
+
+export default DashBoard
