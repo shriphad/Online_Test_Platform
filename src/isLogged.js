@@ -2,13 +2,13 @@ var isLogged = (function () {
     var logged = false;
 
     var getLogged = function () {
-        return logged;    // Or pull this from cookie/localStorage
+        return logged;
     };
 
     var setLogged = function () {
         logged = true;
         return logged;
-        // Also set this in cookie/localStorage
+
     };
 
     return {
