@@ -1,3 +1,23 @@
 import React from "react";
-const Dashboard = () => <h1>Dashboard Page</h1>;
+import isLogged from './isLogged';
+import { Redirect } from "react-router-dom";
+
+
+class Dashboard extends React.Component {
+    render() {
+        if (isLogged.getLogged()) {
+            return (
+                <>
+                    <h1>Welcome</h1>
+                </>
+            )
+        }
+        else {
+
+            return (
+                <Redirect to="/login" />
+            )
+        }
+    }
+}
 export default Dashboard;
