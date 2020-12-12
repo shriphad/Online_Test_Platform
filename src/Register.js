@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 function Register() {
 
     return (
-        <div className="container box">
+        <div>
             <>
                 <Card className="App">
                     <Card.Header border="secondary" style={{ textAlign: 'center' }}>
@@ -35,9 +35,6 @@ function Register() {
                                         placeholder="Password"
                                     //onChange={this.HandlePass}
                                     />
-                                    <a className="text-muted" style={{ float: 'right', marginRight: '1%' }} href="/register">
-                                        Register?
-                                        </a>
                                 </Form.Group>
 
                                 <Form.Group controlId="ConfirmPass">
