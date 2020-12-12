@@ -1,0 +1,8 @@
+.box {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 35%;
+  margin-right: 35%;
+  display: flex;
+  box-sizing: border-box;
+}
