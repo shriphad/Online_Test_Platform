@@ -5,10 +5,10 @@ import {
     Switch,
     Redirect,
 } from "react-router-dom";
-import Login from "./App";
-import Register from "./Register";
-import Dashboard from "./Dashboard";
-import NotFound from "./NotFound";
+import Login from "./Components/Login/App";
+import Register from "./Components/Register/Register";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import NotFound from "./Components/Notfound/NotFound";
 const Routes = (props) => (
     <Router {...props}>
         <Switch>

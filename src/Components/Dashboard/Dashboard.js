@@ -1,5 +1,5 @@
 import React from "react";
-import isLogged from './isLogged';
+import isLogged from '../Service/isLogged';
 import { Redirect } from "react-router-dom";
 
 

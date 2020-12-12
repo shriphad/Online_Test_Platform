@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import { Form, Button } from "react-bootstrap"
 import React from "react";
 import { Redirect } from "react-router-dom";
-import isLogged from './isLogged';
+import isLogged from '../Service/isLogged';
 
 function Validate(user, pass) {
   //console.log(user, pass);
