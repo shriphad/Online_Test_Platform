@@ -2,6 +2,7 @@ import './App.css';
 import Card from 'react-bootstrap/Card'
 import { Form, Button } from "react-bootstrap"
 import React from "react";
+import { Redirect } from "react-router-dom";
 import isLogged from './isLogged';
 
 function Validate(user, pass) {
@@ -17,6 +18,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 'username': '', 'password': '' };
+  }
+
+  Register = (event) => {
+    return (
+      <Redirect to="/register" />
+    );
   }
 
   Login = (event) => {
@@ -65,6 +72,9 @@ class App extends React.Component {
                     placeholder="Password"
                     onChange={this.HandlePass}
                   />
+                  <a className="text-muted" style={{ float: 'right', marginRight: '1%' }} href="/register">
+                    Register?
+                </a>
                 </Form.Group>
 
                 {/* {<Form.Group controlId="formBasicCheckbox">

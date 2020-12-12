@@ -6,7 +6,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import Login from "./App";
-//import Register from "./Pages/Register/Register";
+import Register from "./Register";
 import Dashboard from "./Dashboard";
 import NotFound from "./NotFound";
 const Routes = (props) => (
@@ -15,9 +15,9 @@ const Routes = (props) => (
             <Route path="/login">
                 <Login />
             </Route>
-            {/* <Route path="/register">
+            <Route path="/register">
                 <Register />
-            </Route> */}
+            </Route>
             <Route path="/dashboard">
                 <Dashboard />
             </Route>
