@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Register.css';
-import { Form, Button, Col, InputGroup } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import Card from 'react-bootstrap/Card'
 
 function Register() {
