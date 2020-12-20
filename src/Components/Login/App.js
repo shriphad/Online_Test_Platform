@@ -5,14 +5,17 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import isLogged from '../Service/isLogged';
 
-function Validate(user, pass) {
-  //console.log(user, pass);
-  if ((user === 'shriphad') && pass === '!shri2424') {
-    isLogged.setLogged();
-    //console.log(isLogged.getLogged());+
+// function Validate(user, pass) {
+//   //console.log(user, pass);
+//   if ((user === 'shriphad') && pass === '!shri2424') {
+//     isLogged.setLogged();
+//     return (
+//       <Redirect to="/dashboard" />
+//     );
+//     //console.log(isLogged.getLogged());+
 
-  }
-}
+//   }
+// }
 
 class App extends React.Component {
   constructor(props) {
@@ -20,16 +23,25 @@ class App extends React.Component {
     this.state = { 'username': '', 'password': '' };
   }
 
-  Register = (event) => {
-    return (
-      <Redirect to="/register" />
-    );
+  Validate = (user, pass) => {
+    //console.log(user, pass);
+    if ((user === 'shriphad') && pass === '123') {
+      isLogged.setLogged();
+      //console.log(isLogged.getLogged());+
+
+    }
   }
+
+  // Register = (event) => {
+  //   return (
+  //     <Redirect to="/register" />
+  //   );
+  // }
 
   Login = (event) => {
     event.preventDefault();
     //console.log(this.state.username, this.state.password);
-    Validate(this.state.username, this.state.password)
+    this.Validate(this.state.username, this.state.password);
   }
 
   HandleUser = (event) => {

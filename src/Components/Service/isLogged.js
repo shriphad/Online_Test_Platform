@@ -1,5 +1,5 @@
 var isLogged = (function () {
-    var logged = false;
+    var logged = true;
 
     var getLogged = function () {
         return logged;
