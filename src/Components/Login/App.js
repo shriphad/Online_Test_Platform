@@ -1,9 +1,8 @@
-import './App.css';
-import Card from 'react-bootstrap/Card'
-import { Form, Button } from "react-bootstrap"
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Form, Button, Card } from "react-bootstrap"
 import isLogged from '../Service/isLogged';
+import './App.css';
 
 
 export default function App() {

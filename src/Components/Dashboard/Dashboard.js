@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation, Redirect } from "react-router-dom";
 import isLogged from '../Service/isLogged';
 import Navbar from '../NavBar/NavBar';
-import { Redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 
 function Dashboard() {
