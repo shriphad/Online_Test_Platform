@@ -10,7 +10,11 @@ class Dashboard extends React.Component {
             return (
                 <>
                     <Navbar />
-                    <h1>Welcome</h1>
+                    <div className="box">
+                        <h3>Hi name</h3>
+                        <h4>Wish You all the best!!!</h4>
+                    </div>
+
                 </>
             )
         }
