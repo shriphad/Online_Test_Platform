@@ -14,7 +14,10 @@ export default function App() {
 
   const RouteChange = () => {
     let path = `/dashboard`;
-    history.push(path);
+    history.push({
+      pathname: path,
+      name: 'shriphad'
+    });
   }
 
   const Validate = (user, pass) => {

@@ -7,8 +7,6 @@ const isLogged = (function () {
 
     const setLogged = function () {
         logged = true;
-        return logged;
-
     };
 
     return {
