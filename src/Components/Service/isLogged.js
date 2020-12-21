@@ -1,11 +1,11 @@
-var isLogged = (function () {
-    var logged = true;
+const isLogged = (function () {
+    let logged = false;
 
-    var getLogged = function () {
+    const getLogged = function () {
         return logged;
     };
 
-    var setLogged = function () {
+    const setLogged = function () {
         logged = true;
         return logged;
 
