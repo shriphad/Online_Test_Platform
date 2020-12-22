@@ -9,11 +9,19 @@ import Login from "./Components/Login/App";
 import Register from "./Components/Register/Register";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import NotFound from "./Components/Notfound/NotFound";
+import Student from "./Components/Student/Student";
+import Teacher from "./Components/Teacher/Teacher";
 const Routes = (props) => (
     <Router {...props}>
         <Switch>
             <Route path="/login">
                 <Login />
+            </Route>
+            <Route path="/student">
+                <Student />
+            </Route>
+            <Route path="/Teacher">
+                <Teacher />
             </Route>
             <Route path="/register">
                 <Register />
