@@ -1,13 +1,25 @@
-.Teacher {
+.RegisterCard {
   margin-top: 10%;
   margin-bottom: 10%;
   margin-left: 25%;
   margin-right: 25%;
-  display: flex;
-  box-sizing: border-box;
 }
 
-.Register {
-  box-sizing: border-box;
-  margin: 0.75rem;
+.parent {
+  display: flex;
+  justify-content: space-around;
+}
+
+#left {
+  border: 1px solid lightgray;
+  width: 40%;
+}
+
+#right {
+  border: 1px solid lightgray;
+  width: 40%;
+}
+
+a {
+  text-align: center;
 }

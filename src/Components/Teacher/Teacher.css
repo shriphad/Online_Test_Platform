@@ -1,13 +1,13 @@
-.RegisterApp {
-  margin-top: 10%;
-  margin-bottom: 10%;
+.TeacherCard {
+  margin-top: 5%;
+  margin-bottom: 5%;
   margin-left: 25%;
   margin-right: 25%;
   display: flex;
   box-sizing: border-box;
 }
 
-.Register {
+.Teacher {
   box-sizing: border-box;
   margin: 0.75rem;
 }

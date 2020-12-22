@@ -17,10 +17,10 @@ const Routes = (props) => (
             <Route path="/login">
                 <Login />
             </Route>
-            <Route path="/student">
+            <Route exact path="/register/student">
                 <Student />
             </Route>
-            <Route path="/Teacher">
+            <Route exact path="/register/teacher">
                 <Teacher />
             </Route>
             <Route path="/register">
