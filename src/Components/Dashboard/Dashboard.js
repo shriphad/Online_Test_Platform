@@ -22,26 +22,26 @@ export default function Dashboard() {
         return (
             <>
                 <Navbar />
-                <div className="main">
+                <div className="Dash">
                     <h5>Hi {name}</h5>
                     <h6>Wish You all the best!!!</h6>
-                    <div className="box">
-                        <Tabs
-                            id="controlled-tab-example"
-                            activeKey={key}
-                            onSelect={(k) => setKey(k)}
-                        >
-                            <Tab eventKey="LiveTest" title="Live Tests">
-                                <LiveTest />
-                            </Tab>
-                            <Tab eventKey="History" title="History">
-                                <History />
-                            </Tab>
-                            <Tab eventKey="LeaderBoard" title="LeaderBoard">
-                                <LeaderBoard />
-                            </Tab>
-                        </Tabs>
-                    </div>
+                </div>
+                <div className="box">
+                    <Tabs
+                        id="controlled-tab-example"
+                        activeKey={key}
+                        onSelect={(k) => setKey(k)}
+                    >
+                        <Tab eventKey="LiveTest" title="Live Tests">
+                            <LiveTest />
+                        </Tab>
+                        <Tab eventKey="History" title="History">
+                            <History />
+                        </Tab>
+                        <Tab eventKey="LeaderBoard" title="LeaderBoard">
+                            <LeaderBoard />
+                        </Tab>
+                    </Tabs>
                 </div>
 
             </>

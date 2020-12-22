@@ -2,4 +2,9 @@
   margin-top: 5%;
   margin-left: 3%;
   margin-right: 3%;
+  border-top: 0.6px solid lightgray;
+}
+
+.Dash {
+  margin: 3%;
 }
