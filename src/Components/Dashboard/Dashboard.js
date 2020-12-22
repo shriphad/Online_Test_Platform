@@ -9,7 +9,7 @@ import LeaderBoard from "../Test/LeaderBoard";
 import './Dashboard.css';
 
 
-function Dashboard() {
+export default function Dashboard() {
     const [name, setName] = useState('');
     const [key, setKey] = useState('Live Tests');
     const location = useLocation();
@@ -23,8 +23,8 @@ function Dashboard() {
             <>
                 <Navbar />
                 <div className="main">
-                    <h3>Hi {name}</h3>
-                    <h4>Wish You all the best!!!</h4>
+                    <h5>Hi {name}</h5>
+                    <h6>Wish You all the best!!!</h6>
                     <div className="box">
                         <Tabs
                             id="controlled-tab-example"
@@ -34,10 +34,10 @@ function Dashboard() {
                             <Tab eventKey="LiveTest" title="Live Tests">
                                 <LiveTest />
                             </Tab>
-                            <Tab eventKey="profile" title="History">
+                            <Tab eventKey="History" title="History">
                                 <History />
                             </Tab>
-                            <Tab eventKey="contact" title="LeaderBoard">
+                            <Tab eventKey="LeaderBoard" title="LeaderBoard">
                                 <LeaderBoard />
                             </Tab>
                         </Tabs>
@@ -54,4 +54,3 @@ function Dashboard() {
     }
 
 }
-export default Dashboard;
