@@ -9,20 +9,37 @@ export default function App() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [LoginAs, setLoginAs] = useState("");
   const history = useHistory();
 
-  const RouteChange = () => {
+  const RouteToStudent = () => {
     let path = `/dashboard`;
     history.push({
       pathname: path,
+      id: 1234,
       name: 'shriphad'
     });
   }
 
-  const Validate = (user, pass) => {
+  const RouteToTeacher = () => {
+    let path = `/TeacherDashboard`;
+    history.push({
+      pathname: path,
+      id: 1234,
+      name: 'shriphad'
+    });
+  }
+
+  const ValidateStudent = (user, pass) => {
     if ((user === 'shriphad') && pass === '123') {
       isLogged.setLogged();
-      RouteChange();
+      RouteToStudent();
+    }
+  }
+
+  const ValidateTeacher = (user, pass) => {
+    if ((user === 'admin') && pass === '123') {
+      RouteToTeacher();
     }
   }
 
@@ -30,7 +47,12 @@ export default function App() {
   const Login = (event) => {
     event.preventDefault();
     //console.log(this.state.username, this.state.password);
-    Validate(username, password);
+    if (LoginAs === 'Student') {
+      ValidateStudent(username, password);
+    }
+    else if (LoginAs === 'Teacher') {
+      ValidateTeacher(username, password);
+    }
   }
 
   return (
@@ -65,15 +87,19 @@ export default function App() {
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                 />
-                <a className="text-muted" style={{ float: 'right', marginRight: '1%' }} href="/register">
-                  Register?
-                </a>
+
               </Form.Group>
-
-              {/* {<Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>} */}
-
+              <Form.Group>
+                <Form.Label>Login As</Form.Label>
+                <div onChange={e => setLoginAs(e.target.value)}>
+                  <input required type="radio" value="Teacher" name="loginAs" /> Teacher
+                  <input required type="radio" value="Student" name="loginAs" style={{ marginLeft: '3%' }} /> Student
+              </div>
+              </Form.Group>
+              <a className="text-muted" style={{ float: 'right', marginRight: '1%' }} href="/register">
+                Register?
+                </a>
+              <br></br>
               <Button variant="primary" type="submit">
                 Submit
               </Button>

@@ -11,6 +11,7 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import NotFound from "./Components/Notfound/NotFound";
 import Student from "./Components/StudentRegister/Student";
 import Teacher from "./Components/TeacherModule/TeacherRegister/Teacher";
+import TeacherDashboard from "./Components/TeacherModule/TeacherDashboard/TeacherDashboard";
 const Routes = (props) => (
     <Router {...props}>
         <Switch>
@@ -28,6 +29,9 @@ const Routes = (props) => (
             </Route>
             <Route path="/dashboard">
                 <Dashboard />
+            </Route>
+            <Route path="/TeacherDashboard">
+                <TeacherDashboard />
             </Route>
             <Route exact path="/">
                 <Redirect to="/login" />
