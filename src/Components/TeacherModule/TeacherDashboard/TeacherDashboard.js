@@ -62,7 +62,7 @@ export default function TeacherDashboard() {
             <div className="TeacherMain">
                 Hey {name}! your id is {key}
                 <div className="AvgScoreGraph">
-                    Here Comes the Average Score of the Students
+                    Here Comes the Average Score Graph of the Students
                 </div>
                 <div className="something1">
                     Something here!
