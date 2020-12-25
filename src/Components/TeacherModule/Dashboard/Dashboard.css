@@ -1,0 +1,25 @@
+.AvgScoreGraph {
+  background-color: rgb(218, 174, 156);
+  height: 80%;
+  width: 60%;
+  margin-top: 2%;
+  position: fixed;
+}
+
+.something1 {
+  margin-left: 64%;
+  margin-top: 2%;
+  background-color: aliceblue;
+  width: 20%;
+  height: 30%;
+  position: fixed;
+}
+
+.something2 {
+  margin-left: 64%;
+  margin-top: 25%;
+  background-color: aliceblue;
+  width: 20%;
+  height: 30%;
+  position: fixed;
+}

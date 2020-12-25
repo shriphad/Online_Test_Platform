@@ -11,7 +11,7 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import NotFound from "./Components/Notfound/NotFound";
 import Student from "./Components/StudentRegister/Student";
 import Teacher from "./Components/TeacherModule/TeacherRegister/Teacher";
-import TeacherDashboard from "./Components/TeacherModule/TeacherDashboard/TeacherDashboard";
+import TeacherDashboard from "./Components/TeacherModule/TeacherDashboard";
 const Routes = (props) => (
     <Router {...props}>
         <Switch>
