@@ -7,3 +7,24 @@ require('dotenv').config();
 require('./services/passport.js')
 const compression = require('compression')
 const config = require('./config.js');
+
+
+const env = process.env.NODE_ENV || 'development';
+console.log(env);
+mongoose.connect(config.DB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+
+const app = express()
+app.use(compression())
+
+env !== 'development' && app.use(express.static(path.join(__dirname, 'client/build/static/')));
+
+
+env === 'development' && app.use(morgan('dev'))
+app.use(bodyParser.json())
+app.use('/api', require('./routes/router'))
+
+env !== 'development' && app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
+
+app.listen(process.env.PORT || 5000)

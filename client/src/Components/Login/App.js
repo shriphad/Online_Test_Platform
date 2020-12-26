@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Form, Button, Card } from "react-bootstrap"
 import isLogged from '../Service/isLogged';
+import axios from 'axios';
 import './App.css';
 
 
@@ -10,36 +11,43 @@ export default function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [LoginAs, setLoginAs] = useState("");
-  const history = useHistory();
+  const [apiResponse, setApiResponse] = useState("");
 
-  const RouteToStudent = () => {
-    let path = `/dashboard`;
-    history.push({
-      pathname: path,
-      id: 1234,
-      name: 'shriphad'
-    });
-  }
-
-  const RouteToTeacher = () => {
-    let path = `/TeacherDashboard`;
-    history.push({
-      pathname: path,
-      id: 1234,
-      name: 'shriphad'
-    });
-  }
-
-  const ValidateStudent = (user, pass) => {
-    if ((user === 'shriphad') && pass === '123') {
+  const ValidateStudent = async () => {
+    try {
+      const req = axios.post('/api/Usersignin', {
+        email: username,
+        password: password
+      })
+      const response = await req;
+      localStorage.setItem("token", response.data.token);
+      setApiResponse('success');
+      console.log(response);
       isLogged.setLogged();
-      RouteToStudent();
+      //RouteToStudent();
+    } catch (error) {
+      setApiResponse(error.response.statusText);
+      console.log(error.response);
+      setPassword('');
     }
   }
 
-  const ValidateTeacher = (user, pass) => {
-    if ((user === 'admin') && pass === '123') {
-      RouteToTeacher();
+  const ValidateTeacher = async () => {
+    try {
+      const req = axios.post('/api/signin', {
+        email: username,
+        password: password
+      })
+      const response = await req;
+      localStorage.setItem("token", response.data.token);
+      setApiResponse('success');
+      console.log(response);
+      isLogged.setLogged();
+      //RouteToTeacher();
+    } catch (error) {
+      setApiResponse(error.response.statusText);
+      console.log(error.response);
+      setPassword('');
     }
   }
 
@@ -48,21 +56,23 @@ export default function App() {
     event.preventDefault();
     //console.log(this.state.username, this.state.password);
     if (LoginAs === 'Student') {
-      ValidateStudent(username, password);
+      ValidateStudent();
     }
     else if (LoginAs === 'Teacher') {
-      ValidateTeacher(username, password);
+      ValidateTeacher();
     }
   }
 
   return (
     <>
+      {LoginAs === 'Student' ? (apiResponse === 'success' ? <Redirect to="/dashboard" /> : null) : (apiResponse === 'success' ? <Redirect to="/teacherdashboard" /> : null)}
       <Card className="App">
         <Card.Header border="secondary" style={{ textAlign: 'center' }}>
           Login
         </Card.Header>
         <Card.Body>
           <div className="Login">
+            <small style={{ color: 'red' }}>{apiResponse === 'Bad Request' ? 'Please fill the email and password fields' : apiResponse === 'Unauthorized' ? 'Email or password incorrect' : null}</small>
             <Form onSubmit={Login}>
               <Form.Group controlId="Email">
                 <Form.Label>Email address</Form.Label>
