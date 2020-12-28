@@ -54,6 +54,7 @@ export default function App() {
 
   const Login = (event) => {
     event.preventDefault();
+    console.log(LoginAs);
     //console.log(this.state.username, this.state.password);
     if (LoginAs === 'Student') {
       ValidateStudent();
@@ -63,9 +64,23 @@ export default function App() {
     }
   }
 
+  const Listener = () => {
+    if (LoginAs === "Student") {
+      if (apiResponse === "success") {
+        return (<Redirect to="/dashboard" />);
+      }
+    }
+    else if (LoginAs === "Teacher") {
+      if (apiResponse === "success") {
+        return (<Redirect to="/teacherdashboard" />);
+      }
+    }
+  }
+
   return (
     <>
-      {LoginAs === 'Student' ? (apiResponse === 'success' ? <Redirect to="/dashboard" /> : null) : (apiResponse === 'success' ? <Redirect to="/teacherdashboard" /> : null)}
+      {/* {LoginAs === 'Student' ? (apiResponse === 'success' ? <Redirect to="/dashboard" /> : null) : (apiResponse === 'success' ? <Redirect to="/teacherdashboard" /> : null)} */}
+      {Listener()}
       <Card className="App">
         <Card.Header border="secondary" style={{ textAlign: 'center' }}>
           Login

@@ -10,12 +10,12 @@ router.get('/secret', passport.authenticate('jwt', { session: false }), (req, re
   res.json({ authorization: true });
 });
 
-router.post('/signin', passport.authenticate('local', { session: false }), Authentication.signin);
+router.post('/signin', passport.authenticate('teacher', { session: false }), Authentication.signin);
 
 router.post('/signup', Authentication.signup);
 
 router.post('/Usersignup', Authentication.Usersignup);
-router.post('/Usersignin', passport.authenticate('local', { session: false }), Authentication.Usersignin);
+router.post('/Usersignin', passport.authenticate('student', { session: false }), Authentication.Usersignin);
 
 
 module.exports = router;

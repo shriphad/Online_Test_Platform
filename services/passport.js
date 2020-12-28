@@ -11,7 +11,7 @@ const localOptions = {
 	usernameField: 'email'
 };
 
-passport.use(new LocalStrategy(localOptions, function (email, password, done) {
+passport.use("teacher", new LocalStrategy(localOptions, function (email, password, done) {
 	//Verify this email and password, call done with the user
 	//if it is the correct email and password
 	//otherwise, call done with false
@@ -56,7 +56,7 @@ passport.use(new JwtStrategy(jwtOptions, function (payload, done) {
 
 
 //customer
-passport.use(new LocalStrategy(localOptions, function (email, password, done) {
+passport.use("student", new LocalStrategy(localOptions, function (email, password, done) {
 	//Verify this email and password, call done with the user
 	//if it is the correct email and password
 	//otherwise, call done with false

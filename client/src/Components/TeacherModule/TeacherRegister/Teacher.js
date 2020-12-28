@@ -14,7 +14,7 @@ export default function Teacher() {
 
     const RegisterForm = async () => {
         if (password === Confirmpassword) {
-            axios.post('/api/Usersignup', {
+            axios.post('/api/signup', {
                 email: username,
                 password: password,
                 PhoneNo: phone
